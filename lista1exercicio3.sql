@@ -1,32 +1,30 @@
- create database db_escola;
- use db_escola;
- 
- create table  tb_alunos
- (
-	id bigint auto_increment,
-    nome varchar (522) not null,
-    idade int not null,
-    serie int not null,
-    nota int not null,
-    primary key (id)
- );
- 
- select * from tb_alunos;
- 
-insert into tb_alunos (nome, idade, serie, nota) values ("Ashley", 17, 3, 5);
-insert into tb_alunos (nome, idade, serie, nota) values ("Lorena", 17, 3, 8);
-insert into tb_alunos (nome, idade, serie, nota) values ("Viviane", 16, 2, 9);
-insert into tb_alunos (nome, idade, serie, nota) values ("Ana", 16, 2, 7);
-insert into tb_alunos (nome, idade, serie, nota) values ("Mariana", 15, 1, 6);
-insert into tb_alunos (nome, idade, serie, nota) values ("notafael", 15, 1, 9);
-insert into tb_alunos (nome, idade, serie, nota) values ("Gabriel", 14, 1, 7);
-insert into tb_alunos (nome, idade, serie, nota) values ("André", 14, 1, 10);
- 
-update tb_alunos set idade = "16", serie = 2
- where id =7;
 
- select * from tb_alunos where nota>7;
-select * from tb_alunos where nota<7;
- 
- select * from tb_alunos;
- 
+create database registro_escola;
+
+use registro_escola;
+
+create table alunos(
+	id bigint auto_increment,
+    nome varchar(255) not null,
+    idade int not null,
+    nota float not null,
+    serie varchar(255) not null,
+    primary key (id)
+);
+
+insert into alunos (nome,idade,nota,serie) values ('Esteban',21,10,'Terceiro Ano EM');
+insert into alunos (nome,idade,nota,serie) values ('Paola',21,9,'Terceiro Ano EM');
+insert into alunos (nome,idade,nota,serie) values ('Felipe',21,8,'Terceiro Ano EM');
+insert into alunos (nome,idade,nota,serie) values ('Rui',21,7,'Terceiro Ano EM');
+insert into alunos (nome,idade,nota,serie) values ('Milton',21,6,'Terceiro Ano EM');
+insert into alunos (nome,idade,nota,serie) values ('Jean',21,5,'Terceiro Ano EM');
+insert into alunos (nome,idade,nota,serie) values ('Denilson',21,4,'Terceiro Ano EM');
+insert into alunos (nome,idade,nota,serie) values ('Scaziti',21,3,'Terceiro Ano EM');
+
+select * from alunos where nota > 7;
+select * from alunos where nota < 7;
+
+update alunos set nota = 8 
+where id = 4;
+
+select * from alunos;
